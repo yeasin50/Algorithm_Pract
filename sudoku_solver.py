@@ -29,6 +29,7 @@ def solve():
                         grid[y][x] = n
                         solve()
                         grid[y][x] =0
+                        #print('rec ', end=' ')
                 return
     print(np.matrix(grid))
     input("More solution? ")
