@@ -21,6 +21,7 @@ def possible(y,x, n):
 
 def solve():
     global grid
+    global recursion_happend
     for y in range(9):
         for x in range(9):
             if grid[y][x] == 0:
@@ -30,6 +31,7 @@ def solve():
                         solve()
                         grid[y][x] =0
                         #print('rec ', end=' ')
+                        recursion_happend += 1
                 return
     print(np.matrix(grid))
     input("More solution? ")
@@ -44,5 +46,5 @@ grid = [ [5,3,0,0,7,0,0,0,0],
          [0,0,0,4,1,9,0,0,5],
          [0,0,0,0,8,0,0,0,0]
 ]
-
+recursion_happend = 0
 solve()
